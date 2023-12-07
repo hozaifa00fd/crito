@@ -1,0 +1,21 @@
+.container {
+    padding: 10px 0;
+}
+
+.container {
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    
+    display: flex;
+}
+
+.container .menu {
+    display: none;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320;
+    }
+}
