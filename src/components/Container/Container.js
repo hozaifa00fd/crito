@@ -5,14 +5,14 @@ import Bottun from '../Generics/Bottun'
 
 const Container = () => {
   return (
-    <div className="container">
+        <div className="container">
         <img src={img_logotype} alt="Crito logotype" />
         <button className="menu-bars"><i className="fa-solid fa-bars-staggered"></i></button>
         <div className="menu">
             <div className="top-menu">
                 <div className="contact-info">
                     <div className="child">
-                        <i className="fa-solid fa-phone-volume"></i>
+                        <i className="fa-solid fa-phone-volume"></i> 
                         +46 (8) 121 470 50
                     </div>
                     <div className="child">
@@ -38,7 +38,7 @@ const Container = () => {
                     <a href="News.html">News</a>
                     <a href="Contact.html">Contact</a>
                 </nav>
-                <Bottun text="Login" url="/login" />
+                <Bottun text= "Login" url="Login" />
             </div>
         </div>
     </div>

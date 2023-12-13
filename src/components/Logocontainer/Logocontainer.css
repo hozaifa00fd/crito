@@ -1,0 +1,22 @@
+.logo-container {
+    margin: 0 auto;
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+}
+    .logo-container .-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @media (max-width: 768px) {
+        .logo-container .-logo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    }
+  @media (max-width: 600px) {
+        .logo-container .-logo {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
