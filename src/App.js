@@ -3,15 +3,20 @@ import Header from './components/Header/Header';
 import Feature from './components/Feature/Feature';
 import Footer from './components/Footer/Footer';
 import Logocontainer from './components/Logocontainer/Logocontainer';
+import About from './components/About/About';
+import OurServices from './components/OurServices/OurServices';
+import Choose from './components/Choose/Choose';
 
 function App() {
   return (
     <div className='wrapper'>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
       <Header />
       <Logocontainer />
       <main>
         <Feature />
+        <About />
+        <OurServices />
+        <Choose />
       </main>
       <Footer />
     </div>
