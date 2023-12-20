@@ -1,0 +1,112 @@
+.articles {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 5.6rem;
+    text-align: left;
+  }
+  .articles .article-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .articles .article-top .article-top-left p {
+    font-size: 14px;
+    color: rgb(240, 24, 24);
+    font-weight: 400;
+  }
+  .articles .article-top .article-top-left h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 22px;
+  }
+  .articles .article-top .article-top-right a {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #191919;
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: 300;
+    font-size: 16px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .articles .article-top .article-top-right a i {
+    margin-left: 8px;
+    font-size: 0.7em;
+    transform: rotate(-45deg);
+  }
+  .articles .article-top .article-top-right a:hover {
+    background-color: #191919;
+    border: 1px solid #191919;
+    color: #f0efe9;
+  }
+  .articles .article-bottom div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .articles .article-bottom div .item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .articles .article-bottom div .item .date-img {
+    position: relative;
+  }
+  .articles .article-bottom div .item .date-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .articles .article-bottom div .item .date-img .date {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #F9D783;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    gap: 2px;
+    top: 16px;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+  }
+  .articles .article-bottom div .item .date-img .date h4 {
+    margin-bottom: 0px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .articles .article-bottom div .item .date-img .date p {
+    color: #3a3838;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .articles .article-bottom div .item p {
+    font-size: 13px;
+    font-weight: 500;
+    color: #999;
+  }
+  .articles .article-bottom div .item h5 {
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .articles span {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 1.2rem;
+  }
+  .articles span .dot {
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+    background-color: #000;
+    opacity: 0.3;
+  }
+  .articles span .dot:first-child {
+    opacity: 1;
+  }
