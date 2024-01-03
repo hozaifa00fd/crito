@@ -2,11 +2,12 @@ import React from 'react'
 import img_logotype from '../../assets/images/logotype.svg'
 import './Container.css'
 import Bottun from '../Generics/Bottun'
+import { NavLink, Link } from 'react-router-dom'
 
 const Container = () => {
   return (
         <div className="container">
-        <img src={img_logotype} alt="Crito logotype" />
+        <Link to= "/"><img src={img_logotype} alt="Crito logotype" /></Link>
         <button className="menu-bars"><i className="fa-solid fa-bars-staggered"></i></button>
         <div className="menu">
             <div className="top-menu">
@@ -33,10 +34,10 @@ const Container = () => {
             </div>
             <div className="main-menu">
                 <nav>
-                    <a className="active" href="home.html">Home</a>
-                    <a href="Service.html">Service</a>
-                    <a href="News.html">News</a>
-                    <a href="Contact.html">Contact</a>
+                    <NavLink to= "/">Home</NavLink>
+                    <NavLink to= "/Service">Service</NavLink>
+                    <NavLink to= "/News">News</NavLink>
+                    <NavLink to= "/Contacts">Contacts</NavLink>
                 </nav>
                 <Bottun text= "Login" url="Login" />
             </div>
