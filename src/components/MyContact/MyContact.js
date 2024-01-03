@@ -13,6 +13,8 @@ const MyContact = () => {
     message: '',
   });
 
+  const [submitStatus, setSubmitStatus] = useState('');
+
   const handleChange = (e) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -25,35 +27,46 @@ const MyContact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    let newErrors = {};
+
     if (!validateLength(formData.name, 3)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        name: 'You should write your full name',
-      }));
+      newErrors = { ...newErrors, name: 'You should write your full name' };
     }
 
     if (!validateEmail(formData.email)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        email: 'Please enter a valid email address',
-      }));
+      newErrors = { ...newErrors, email: 'Please enter a valid email address' };
     }
 
     if (!validateLength(formData.message, 3)) {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        message: 'Please write your message here',
-      }));
+      newErrors = { ...newErrors, message: 'Please write your message here' };
     }
 
-    if (Object.values(errors).every((error) => !error)) {
-      console.log('Formuläret är giltigt och kan skickas:', formData);
-      // Här kan du skicka formuläret till en server eller göra något annat med datan
+    setErrors(newErrors);
+
+    if (Object.values(newErrors).every((error) => !error)) {
+      try {
+        const response = await fetch('https://win23-assignment.azurewebsites.net/api/contactform', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          setSubmitStatus('Form submitted successfully!');
+        } else {
+          setSubmitStatus('Failed to submit form. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmitStatus('An error occurred. Please try again later.');
+      }
     } else {
-      console.log('Formuläret är ogiltigt. Vänligen korrigera fel.');
+      setSubmitStatus('');
     }
   };
 
@@ -70,6 +83,7 @@ const MyContact = () => {
     <div className='outer-form'>
       <div className="form">
         <h2>Leave us a message <br /> for any information</h2>
+        {submitStatus && <div>{submitStatus}</div>}
         <form onSubmit={handleSubmit} action="#" method="post">
           <input
             type="text"
